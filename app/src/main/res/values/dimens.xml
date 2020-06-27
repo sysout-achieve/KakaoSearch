@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_search_size">48dp</dimen>
+    <dimen name="margin_start_guide">18dp</dimen>
+    <dimen name="margin_end_guide">18dp</dimen>
+</resources>

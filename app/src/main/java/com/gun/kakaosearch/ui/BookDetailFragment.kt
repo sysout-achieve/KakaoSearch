@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import com.bumptech.glide.Glide
 import com.google.gson.Gson
-import com.gun.kakaosearch.presenter.BaseFragment
+import com.gun.kakaosearch.ui.presenter.BaseFragment
 import com.gun.kakaosearch.R
 import com.gun.kakaosearch.domain.Book
 import kotlinx.android.synthetic.main.fragment_book_detail.view.*

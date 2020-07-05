@@ -1,4 +1,4 @@
-package com.gun.kakaosearch.presenter
+package com.gun.kakaosearch.ui.presenter
 
 interface BasePresenter {
     fun destroyView()

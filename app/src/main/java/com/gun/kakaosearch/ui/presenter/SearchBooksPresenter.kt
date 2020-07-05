@@ -1,4 +1,4 @@
-package com.gun.kakaosearch.presenter
+package com.gun.kakaosearch.ui.presenter
 
 import com.gun.kakaosearch.api.RetrofitKakao
 import com.gun.kakaosearch.domain.Book
@@ -8,10 +8,10 @@ import retrofit2.Callback
 import retrofit2.Response
 import timber.log.Timber
 
-class SearchBooksPresenter(var searchBooksView: SearchBooksConstants.View?) :
+open class SearchBooksPresenter(var searchBooksView: SearchBooksConstants.View?) :
     SearchBooksConstants.Presenter {
 
-    private var booksList = ArrayList<Book>()
+    var booksList = ArrayList<Book>()
     var pageCounter = 1
     var isEnd = false
 
@@ -41,6 +41,10 @@ class SearchBooksPresenter(var searchBooksView: SearchBooksConstants.View?) :
                 }
             })
     }
+
+//    fun callBookListObservable(name: String){
+//        RetrofitKakao.getService().requestSearchObservable(keyword = name, page = pageCounter).test().dispose()
+//    }
 
     override fun getBooksArrList(): ArrayList<Book> {
         return booksList

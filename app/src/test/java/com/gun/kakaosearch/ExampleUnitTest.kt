@@ -22,10 +22,6 @@ class ExampleUnitTest {
     fun functionTest() {
         kotlinFun(1)
         kotlinFun(0)
-        val nameAge : (String,Int) -> String= {name :String , age : Int ->
-            "My name is ${name} I'm ${age}"
-        }
-        println(nameAge("Geon", 30))
     }
 
     fun kotlinFun(score: Int) {

@@ -1,4 +1,4 @@
-package com.gun.kakaosearch.presenter
+package com.gun.kakaosearch.ui.presenter
 
 import com.gun.kakaosearch.domain.Book
 import com.gun.kakaosearch.ui.BaseView

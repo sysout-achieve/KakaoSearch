@@ -10,8 +10,8 @@ import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gun.kakaosearch.*
 import com.gun.kakaosearch.domain.Book
-import com.gun.kakaosearch.presenter.BaseFragment
-import com.gun.kakaosearch.presenter.SearchBooksConstants
+import com.gun.kakaosearch.ui.presenter.BaseFragment
+import com.gun.kakaosearch.ui.presenter.SearchBooksConstants
 import com.gun.kakaosearch.ui.adapter.BooksListAdapter
 import com.gun.kakaosearch.ui.util.EndlessRecyclerOnScrollListener
 import kotlinx.android.synthetic.main.fragment_book_list.view.*

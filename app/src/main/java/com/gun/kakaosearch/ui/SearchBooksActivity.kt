@@ -10,13 +10,13 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import com.gun.kakaosearch.R
-import com.gun.kakaosearch.presenter.SearchBooksConstants
-import com.gun.kakaosearch.presenter.SearchBooksPresenter
+import com.gun.kakaosearch.ui.presenter.SearchBooksConstants
+import com.gun.kakaosearch.ui.presenter.SearchBooksPresenter
 import com.gun.kakaosearch.domain.Book
 import com.gun.kakaosearch.ui.adapter.BooksListAdapter
 import kotlinx.android.synthetic.main.layout_searchbar.*
 
-class SearchBooksActivity : AppCompatActivity(),
+open class SearchBooksActivity : AppCompatActivity(),
     SearchBooksConstants.View {
 
     private val bookListFragment: BookListFragment by lazy { BookListFragment() }
@@ -28,14 +28,15 @@ class SearchBooksActivity : AppCompatActivity(),
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search_books)
         btn_search.setOnClickListener { view ->
+            val searchStr = edit_search.text.toString()
             this.hideKeyboard(view)
-            searchText()
+            searchText(searchStr)
         }
         val booksAdapter = BooksListAdapter(presenter.getBooksArrList())
         booksAdapter.setOnItemClickListener(object :
             BooksListAdapter.ItemClickListener {
             override fun onClick(view: View, book: Book) {
-                var bundle = Bundle()
+                val bundle = Bundle()
                 val jsonBody = Gson().toJson(book)
                 bundle.putString("body", jsonBody)
                 bookDetailFragment.arguments = bundle
@@ -57,9 +58,9 @@ class SearchBooksActivity : AppCompatActivity(),
         }
     }
 
-    fun searchText() {
+    fun searchText(searchStr : String) {
         presenter.reset()
-        presenter.callBookList(edit_search.text.toString())
+        presenter.callBookList(searchStr)
     }
 
     fun Context.hideKeyboard(view: View) {

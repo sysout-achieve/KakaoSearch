@@ -8,7 +8,7 @@ import retrofit2.Callback
 import retrofit2.Response
 import timber.log.Timber
 
-open class SearchBooksPresenter(var searchBooksView: SearchBooksConstants.View?) :
+open class SearchBooksPresenter(var searchBooksView: SearchBooksConstants.View?) : 
     SearchBooksConstants.Presenter {
 
     var booksList = ArrayList<Book>()

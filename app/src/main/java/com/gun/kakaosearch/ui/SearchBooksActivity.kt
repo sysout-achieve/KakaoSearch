@@ -60,6 +60,7 @@ open class SearchBooksActivity : AppCompatActivity(),
 
     fun searchText(searchStr : String) {
         presenter.reset()
+        presenter.onClear()
         presenter.callBookList(searchStr)
     }
 
